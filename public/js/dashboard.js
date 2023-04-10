@@ -2,6 +2,9 @@
 
 const $ = (selector) => document.querySelector(selector);
 
+let timer;
+
+
 const postalRegEx =
   /^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$/i;
 
@@ -27,6 +30,11 @@ const resetErrors = () => {
 const onSubmit = (evt) => {
   //TODO::Reset any errors before submitting
   resetErrors();
+
+let hour =$("#hour").value;
+let minutes =$("#minutes").value;
+let second =$("#seconds").value;
+
 
   //TODO:: Set notifications since it doesn't need to be validated
   let notificationsOn = $("#notifications").checked;
@@ -76,8 +84,46 @@ const onSubmit = (evt) => {
     $("#setting_temperature").textContent = temperature;
   }
 
+  //reads if there is a timer value
+  //if there is one it starts the interval timer and
+  //sets the setting temperature to the one on the time limit
+  //intervall timer calls timed temp
+  if((hour>0)||(minutes>0)||(second>0)){
+    timer = setInterval(Timed_Temp,1000);
+    $("#setting_temperature").textContent = $("timed_temperature").value
+  }
+
   evt.preventDefault();
 };
+
+
+//counts down and move hours into minutes into seconds
+//updates remaning time every second
+//when timer is done sets temp back to original setting
+const Timed_Temp = (evt) =>{
+  if((hour>0)&&(minutes==0)){
+    hour = hour -1;
+    minutes = 60;
+  }
+
+  if((minutes>0)&&(second==0)){
+    minutes = minutes -1;
+    second = 60;
+  }
+
+  if(!(hour>0)||(minutes>0)||(second>0)){
+    clearInterval(timer);
+
+  }
+
+  second = second - 1;
+  $("setting_time").textContent = hour,minute,second
+  console.log(second);
+  $("#setting_temperature").textContent = $("#temperature").value;
+  evt.preventDefault();
+}
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   //TODO:: Add current date
@@ -86,4 +132,5 @@ document.addEventListener("DOMContentLoaded", () => {
   $("#reset_form").addEventListener("reset", onReset);
   //TODO:: Add Submit Form listener
   $("#update_settings").addEventListener("click", onSubmit);
+
 });
