@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQs terms of services</title>
+    <link rel="stylesheet" href="css/faq.css" />
+  </head>
+
+  <body>
+    <%- include('layouts/menu') -%>
+    <main>
+      <h1>Terms of Service</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+      <h3>Privacy Policy</h3>
+      <p><a href="privacy"></a>
+        Ut gravida tincidunt dui, eget auctor elit viverra nec.
+        Integer sit amet bibendum diam, id euismod est.
+        In hac habitasse platea dictumst. Duis dapibus enim elit,
+        at viverra erat consequat eget. Morbi in sapien at massa iaculis
+        interdum nec vitae velit. Sed sodales sollicitudin elit imperdiet
+        tincidunt. Fusce iaculis, libero ut rutrum auctor, sem sapien
+        suscipit neque, sit amet scelerisque tellus justo sagittis sapien.
+        Vestibulum tempus nibh in tellus fermentum, sit amet egestas
+        mauris varius. Vestibulum ante ipsum primis in faucibus orci luctus
+        et ultrices posuere cubilia curae; Nam lobortis placerat mi nec dapibus.
+        Mauris sagittis ante faucibus turpis gravida tempus. Nam consequat,
+        metus ac congue mollis, orci purus dapibus nisi, sed vulputate erat ipsum
+        ac sem. Sed et nisl enim. Sed et massa nunc. Praesent non sem lectus.
+        Phasellus quis faucibus est, vel elementum quam.
+      </p>
+      <p><input type="button" id="accept" value="Accept" /></p>
+      <script>
+        const btn = document.querySelector("#accept");
+        btn.addEventListener(
+          "click",
+          () => (window.location.href = "faq?accepted=true")
+        );
+      </script>
+    </main>
+    <%- include('layouts/Footer') -%>
+  </body>
+</html>

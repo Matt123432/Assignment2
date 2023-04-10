@@ -13,6 +13,11 @@ body {
 h1 { 
     font-size: 150%;
 }
+
+h3 { 
+    font-size: 150%;
+}
+
 h2 {
     font-size: 120%;
     padding: .25em 0 .25em 25px;
@@ -45,6 +50,32 @@ p {
     padding-bottom: .25em;
     padding-left: 25px;
 }
+
+.menu-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+  .menu-li {
+    float: left;
+  }
+  
+  .menu-li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  .menu-li a:hover {
+    background-color: cornflowerblue;
+  }
+  
 .hidden { display: none; }
 fieldset { padding: 1em; }
 legend { font-weight: bold; padding: 0.5em; }

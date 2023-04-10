@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const PORT = 5000;
+const PORT = 4000;
 
 app.use(expressSession({
   secret:"secret key"
@@ -36,19 +36,23 @@ app.get("/profile", (req, res) => {
 });
 
 app.get("/math", (req, res) => {
-  res.sendFile(path.resolve(__dirname + "/views/", "math.html"));
+  //res.sendFile(path.resolve(__dirname + "/views/", "math.html"));
+  res.render("math");
 });
 
 app.get("/faq", (req, res) => {
-  res.sendFile(path.resolve(__dirname + "/views/", "faq.html"));
+  //res.sendFile(path.resolve(__dirname + "/views/", "faq.html"));
+  res.render("faq");
 });
 
 app.get("/terms", (req, res) => {
-  res.sendFile(path.resolve(__dirname + "/views/", "terms.html"));
+  //res.sendFile(path.resolve(__dirname + "/views/", "terms.html"));
+  res.render("terms");
 });
 
-app.get("/slides", (req, res) => {
-  res.sendFile(path.resolve(__dirname + "/views/", "slide-show.html"));
+app.get("/slide-show", (req, res) => {
+  //res.sendFile(path.resolve(__dirname + "/views/", "slide-show.html"));
+  res.render("slide-show");
 });
 
 app.post("/update-profile", (req, res)=>{

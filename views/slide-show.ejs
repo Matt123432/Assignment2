@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>F1 Slide Show</title>
+    <link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+    <%- include('layouts/menu') -%>
+    <main>
+        <h1>F1 Slide Show</h1>
+
+        <ul id="image_list">
+            <li><a href="images/rb7.png" title="Rb7"></a></li>
+            <li><a href="images/Mexico.png" title="Mexico"></a></li>
+            <li><a href="images/rb19.png" title="Rb19"></a></li>
+            <li><a href="images/F1-meme.png" title="Kimi's meme"></a></li>
+            <li><a href="images/austria.png" title="Austria"></a></li>
+        </ul>
+    
+        <p><img id="main_image" src="images/rb7.png" alt="Rb7"></p>
+        <h2 id="caption">Rb7</h2>
+        <div>
+            <input type="button" id="Prev" value="Prev" />
+            <input type="button" id="Next" value="Next" />
+        </div>  
+
+        <script src="js/slide-show.js"></script>
+    </main>
+    <%- include('layouts/Footer') -%>
+</body>
+</html>
